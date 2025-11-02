@@ -47,7 +47,67 @@ if (Vlinha + tam > n)
     return 0;
 }
 
+// Verificar sobreposição ANTES de posicionar
+//horizontal
 
+for (int i = 0; i < tam; i++){
+    if (tabuleiro[Hlinha][Hcol + i] != agua)
+    {
+        printf ("Erro: sobreposição no navio horizontal.\n");
+        return 0;
+    }}
 
-    return 0;
+//vertical
+
+for (int i = 0; i < tam; i++)
+{
+    if (tabuleiro [Vlinha +i][Vcol] != agua)
+    {
+        printf("ERRO: Sobreposição no navio vertical. \n");
+        return 0;
+    }
+    
 }
+
+//posicionar navio horizontal 
+for (int i = 0; i < tam; i++)
+{
+    tabuleiro [Hlinha][Hcol + i] = navioH[i]; //=3
+
+}
+
+// posicionar navio vertical
+
+for (int i = 0; i < tam; i++)
+{
+    tabuleiro[Vlinha +i][Vcol] = NavioV[i]; //3
+}
+ // Exibir cordenadas
+
+ printf ("Cordenadas do navio H (horizontal): \n");
+ for (int i = 0; i < tam; i++)
+ {
+    printf ("(%d, %d)\n", Hlinha, Hcol + i);
+ }
+ 
+ printf ("Cordenadas do navio V (Vertical): \n");
+ for (int i = 0; i < tam; i++)
+ {
+    printf ("(%d, %d) \n", Vlinha + i, Vcol);
+ }
+
+ //Exibir tabuleiro
+
+ printf ("\nTabuleiro (0 =agua, 3 =navio):\n");
+ for (int lin =0; lin < n; lin++)
+ {
+    for (int col = 0; col < n; col++)
+    {
+        printf("%d", tabuleiro [lin][col]);
+    }
+    printf ("\n");
+
+ }   
+ return 0; 
+}
+
